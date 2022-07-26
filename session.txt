@@ -1,0 +1,18 @@
+cookie
+req.getAttribute
+=> redirect하면 값이 사라진다.
+
+
+session
+session.getAttribute
+=> redirect하면 값이 남아있다.
+브라우저를 종료해야 사라진다.
+
+application
+application.getAttribute
+=> 직접 값을 지워줘야 사라진다.
+
+성공했을 때 return값은 무조건 1.
+
+실패했을 때 return값은 우리가 임의로 수정.
+

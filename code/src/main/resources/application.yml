@@ -1,3 +1,14 @@
 
 mybatis:
   mapper-location: mapper/*.xml
+
+spring :
+  mail :
+    host : smtp.naver.com
+    port : 465
+    username : chupachicchok@naver.com
+    password : chupadupadipa
+    properties :
+      mail.smtp.auth : true
+      mail.smtp.ssl.enable : true
+      mail.smtp.ssl.trust : smtp.naver.com
