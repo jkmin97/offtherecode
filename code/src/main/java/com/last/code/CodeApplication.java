@@ -1,37 +1,23 @@
 package com.last.code;
 
-import java.util.Random;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.HashMap;
+
+import org.json.simple.JSONObject;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
-import com.last.code.email.service.EmailSenderService;
+import net.nurigo.java_sdk.api.Message;
+import net.nurigo.java_sdk.exceptions.CoolsmsException;
 
-import lombok.extern.slf4j.Slf4j;
 
-@EnableJpaAuditing
-@SpringBootApplication
-@Slf4j
+@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 public class CodeApplication {
-
-	@Autowired
-	private EmailSenderService senderService;
 	
     public static void main(String[] args) {
         SpringApplication.run(CodeApplication.class, args);
-    }
-    
-    @EventListener(ApplicationReadyEvent.class)
-    public void sendMail() {
-    	Random random = new Random();
-		int checkNum = random.nextInt(888888) + 111111;
-		log.info("인증번호" + checkNum);
-    	senderService.sendEmail("chupachicchok@naver.com",
-    			"OffTheRecode 인증 메일입니다.", "인증번호는 " + checkNum + "입니다");
     }
 
 }

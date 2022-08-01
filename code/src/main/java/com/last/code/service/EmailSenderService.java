@@ -1,6 +1,4 @@
-package com.last.code.email.service;
-
-import java.util.Random;
+package com.last.code.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;

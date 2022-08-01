@@ -1,4 +1,4 @@
-package com.last.code.email.dto;
+package com.last.code.dto;
 
 import java.util.ArrayList;
 import java.util.List;
